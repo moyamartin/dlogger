@@ -6,7 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>766</width>
+=======
+    <width>782</width>
+>>>>>>> origin/master
     <height>470</height>
    </rect>
   </property>
@@ -20,6 +24,7 @@
    <string>ADN - Plot</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -112,10 +117,189 @@
          </size>
         </property>
        </spacer>
+=======
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>67</width>
+            <height>17</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>67</width>
+            <height>17</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>67</width>
+            <height>17</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Puerto:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboPorts">
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>250</width>
+            <height>25</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>No hay dispositivos conectados</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushConectar">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Conectar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>13</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>60</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Mostrar:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_frecuencia">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Frecuencia</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_capacidad">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Capacidad</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>468</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+>>>>>>> origin/master
       </item>
      </layout>
     </item>
     <item>
+<<<<<<< HEAD
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -136,6 +320,15 @@
         </item>
        </layout>
       </widget>
+=======
+     <widget class="PlotWidget" name="plot_1">
+      <property name="minimumSize">
+       <size>
+        <width>720</width>
+        <height>360</height>
+       </size>
+      </property>
+>>>>>>> origin/master
      </widget>
     </item>
    </layout>
@@ -145,7 +338,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>766</width>
+=======
+     <width>782</width>
+>>>>>>> origin/master
      <height>20</height>
     </rect>
    </property>
@@ -161,6 +358,7 @@
     </property>
     <addaction name="actionAbout"/>
    </widget>
+<<<<<<< HEAD
    <widget class="QMenu" name="menuConfiguraci_n">
     <property name="title">
      <string>Configuración</string>
@@ -170,6 +368,9 @@
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuConfiguraci_n"/>
+=======
+   <addaction name="menuArchivo"/>
+>>>>>>> origin/master
    <addaction name="menuAyuda"/>
   </widget>
   <action name="actionConfiguraci_n">
@@ -234,6 +435,7 @@
     <string>Abrir datos</string>
    </property>
   </action>
+<<<<<<< HEAD
   <action name="actionGr_fica_1">
    <property name="text">
     <string>Gráfica 1</string>
@@ -249,6 +451,8 @@
     <string>Gráficas</string>
    </property>
   </action>
+=======
+>>>>>>> origin/master
  </widget>
  <customwidgets>
   <customwidget>

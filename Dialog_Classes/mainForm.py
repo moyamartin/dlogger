@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 
+<<<<<<< HEAD
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import SIGNAL, Qt
 from PyQt4.QtGui import QAction
 from pyqtgraph import PlotWidget
+=======
+from PyQt4 import QtGui
+from PyQt4.QtCore import SIGNAL
+>>>>>>> origin/master
 from Threads_Classes import checkPortsThread, dataThread, generateLogThread
 import maindesign
 import errorForm
@@ -11,12 +16,15 @@ import ackForm
 import aboutForm
 import serial
 
+<<<<<<< HEAD
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
     def _fromUtf8(s):
         return s
 
+=======
+>>>>>>> origin/master
 
 class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     serialPort = None
@@ -29,12 +37,15 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     readThread = None
     writeFileThread = None
 
+<<<<<<< HEAD
     # tabs variables
     tabs = []
     tabs_layouts = []
     plots = []
     tab_button = None
 
+=======
+>>>>>>> origin/master
     # Datos a plotear
     datos_tiempo = []
     datos_frecuencia = []
@@ -47,6 +58,17 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     buffer_capacidad = []
     buffer_histo_cap = []
 
+<<<<<<< HEAD
+=======
+    # Colores de las señales
+    color_frecuencia = (255, 0, 0)
+    color_capacidad = (255, 255, 0)
+
+    curve_frecuencia = None
+    curve_capacidad = None
+
+    brush_temp = None
+>>>>>>> origin/master
     def __init__(self):
         # Super() es usado para referirse a clases padres sin nombrarla explícitamente
         super(self.__class__, self).__init__()
@@ -80,6 +102,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
         self.writeFileThread = generateLogThread.GenerateLogThread()
 
+<<<<<<< HEAD
         self.actionAbout.triggered.connect(self.open_about)
         self.actionAbrir_datos.triggered.connect(self.open_plot)
 
@@ -112,6 +135,38 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
                                                                                                   str(
                                                                                                       self.tabWidget.count() + 1)))
         self.tabWidget.setCurrentIndex(self.tabWidget.count() - 1)
+=======
+        self.plot_1.setLabel('left', 'Frecuenca', 'Hz')
+        self.plot_1.setLabel('bottom', 'Tiempo', 'S')
+        self.plot_1.setXRange(0, 3, 0.05)
+        self.plot_1.setYRange(0, 65000, 0.05)
+        self.plot_1.addLegend()
+        self.curve_frecuencia = self.plot_1.plot(pen=(self.color_frecuencia[0], self.color_frecuencia[1], self.color_frecuencia[2]),
+                                                 name="Frecuencia")
+        self.curve_capacidad = self.plot_1.plot(pen=(self.color_capacidad[0], self.color_capacidad[1], self.color_capacidad[2]),
+                                                name="Capacidad")
+
+
+        self.plot_2.setLabel('left', 'Cantidades', '')
+        self.plot_2.setLabel('bottom', 'Capacidad', 'pF')
+        self.plot_2.setXRange(0, 1023, 0.05)
+        self.curve_histograma = self.plot_2.plot()
+
+
+
+        self.actionAbout.triggered.connect(self.open_about)
+        self.actionAbrir_datos.triggered.connect(self.open_plot)
+
+        self.checkBox_frecuencia.setEnabled(True)
+        self.checkBox_frecuencia.setChecked(True)
+        self.checkBox_capacidad.setEnabled(True)
+        self.checkBox_capacidad.setChecked(True)
+
+        self.checkBox_frecuencia.clicked.connect(self.modify_plot)
+        self.checkBox_capacidad.clicked.connect(self.modify_plot)
+
+        
+>>>>>>> origin/master
 
     def modify_plot(self):
         aux_frecuencia = self.datos_frecuencia
@@ -121,6 +176,11 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         if self.checkBox_capacidad.isChecked() is False:
             aux_capacidad = []
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
         self.curve_capacidad.setData([], [])
         self.curve_frecuencia.setData([], [])
         self.update_plot(aux_capacidad, aux_frecuencia, self.datos_tiempo)
@@ -128,6 +188,10 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         del aux_frecuencia
         del aux_capacidad
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     def open_plot(self):
 
         del self.datos_tiempo[:]
@@ -200,6 +264,10 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.checkBox_capacidad.setEnabled(True)
         self.checkBox_capacidad.setChecked(True)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     def end_readings(self):
         self.pushConectar.setText("Conectar")
         self.pushConectar.clicked.disconnect()
@@ -260,11 +328,19 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
             self.checkBox_frecuencia.setEnabled(False)
             self.checkBox_capacidad.setEnabled(False)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
             self.comboPorts.setEnabled(False)
 
             self.checkBox_frecuencia.setChecked(True)
             self.checkBox_capacidad.setChecked(True)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
             self.pushConectar.setText("Desconectar")
             self.pushConectar.clicked.disconnect()
             self.pushConectar.clicked.connect(self.end_readings)
@@ -309,17 +385,29 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
         self.curve_histograma.setData(hist_y)
 
+<<<<<<< HEAD
         if len(self.buffer_frecuencia) != 0:  # and len(self.buffer_temp) is len(self.buffer_tiempo):
             # self.fix_matrix(self.buffer_temp)
             # self.curve_temp.setData(x=self.buffer_tiempo, y=self.buffer_temp)
+=======
+        if len(self.buffer_frecuencia) != 0: #and len(self.buffer_temp) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_temp)
+            #self.curve_temp.setData(x=self.buffer_tiempo, y=self.buffer_temp)
+>>>>>>> origin/master
             self.curve_frecuencia.setData(x=self.buffer_tiempo, y=self.buffer_frecuencia, antialias=True)
         else:
             self.curve_frecuencia.setData([], [])
 
         if len(self.buffer_capacidad) != 0:
+<<<<<<< HEAD
             # and len(self.buffer_pid) is len(self.buffer_tiempo):
             # self.fix_matrix(self.buffer_pid)
             # self.curve_pid.setData(x=self.buffer_tiempo, y=self.buffer_pid)
+=======
+            #and len(self.buffer_pid) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_pid)
+            #self.curve_pid.setData(x=self.buffer_tiempo, y=self.buffer_pid)
+>>>>>>> origin/master
             self.curve_capacidad.setData(x=self.buffer_tiempo, y=self.buffer_capacidad, antialias=True)
         else:
             self.curve_capacidad.setData([], [])
